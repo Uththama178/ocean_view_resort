@@ -10,15 +10,16 @@ public class DBTest {
             Connection connection = DBConnection.getConnection();
 
             if (connection != null && !connection.isClosed()) {
-                System.out.println("✅ Database Connection Successful!");
+                System.out.println("Database Connection Successful!");
                 System.out.println("Connected to: " + connection.getMetaData().getURL());
 
 
                 connection.close();
             }
         } catch (Exception e) {
-            System.out.println("❌ Connection Failed!");
+            System.out.println("Connection Failed!");
             e.printStackTrace();
         }
     }
+
 }
