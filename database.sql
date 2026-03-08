@@ -1,14 +1,17 @@
+USE ocean_view_db;
 DROP TABLE IF EXISTS bill;
 DROP TABLE IF EXISTS reservation;
 DROP TABLE IF EXISTS room;
 DROP TABLE IF EXISTS guest;
 DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS notification;
 
 SELECT * FROM user;
 SELECT * FROM guest;
 SELECT * FROM room;
 SELECT * FROM reservation;
 SELECT * FROM bill;
+SELECT * FROM notification;
 
 
 CREATE TABLE user (
@@ -100,3 +103,13 @@ INSERT INTO bill (billId, resId, totalAmount) VALUES
 ALTER TABLE reservation ADD COLUMN total_amount DOUBLE DEFAULT 0.0;
 
 
+CREATE TABLE notification (
+                              notifId VARCHAR(10) NOT NULL,
+                              message TEXT NOT NULL,
+                              receiverRole ENUM('ADMIN', 'RECEPTIONIST', 'STAFF') NOT NULL,
+                              timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                              isRead BOOLEAN DEFAULT FALSE,
+                              CONSTRAINT pk_notification PRIMARY KEY (notifId)
+);
+INSERT INTO notification (notifId, message, receiverRole, isRead)
+VALUES ('N001', 'New Reservation: Room R005 booked by Receptionist Mala', 'ADMIN', FALSE);

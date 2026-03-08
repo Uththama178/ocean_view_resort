@@ -21,6 +21,22 @@ public class BillDTO {
         this.finalAmount = finalAmount;
     }
 
+    public String getBillId() {
+        return billId;
+    }
+
+    public void setBillId(String billId) {
+        this.billId = billId;
+    }
+
+    public String getResId() {
+        return resId;
+    }
+
+    public void setResId(String resId) {
+        this.resId = resId;
+    }
+
     public double getFinalAmount() { return finalAmount; }
     public void setFinalAmount(double finalAmount) { this.finalAmount = finalAmount; }
 }
