@@ -11,10 +11,10 @@ public class ReservationController {
 
     public ResponseDTO<Boolean> makeReservation(ReservationDTO dto) {
         try {
-            // Service එකේ සහ මෙහි නම දැන් confirmBooking ලෙස සමාන වේ
+
             return reservationService.confirmBooking(dto);
         } catch (Exception e) {
-            // Unhandled Exception එක මෙහිදී handle කර ඇත
+
             return new ResponseDTO<>(500, "Error: " + e.getMessage(), false);
         }
     }
