@@ -23,7 +23,7 @@ public class UserDTO implements Serializable {
         this.fullName = fullName;
     }
 
-    // Getters and Setters [cite: 2026-02-14]
+    // Getters and Setters
     public String getUserId() { return userId; }
     public void setUserId(String userId) { this.userId = userId; }
 

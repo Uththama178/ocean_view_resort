@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class ReservationDTO implements Serializable {
     private String resId;
     private String guestId;
-    private String guestName; // Scenario එකේ ඉල්ලන පරිදි Guest Name පෙන්වීමට අවශ්‍ය වේ
+    private String guestName;
     private String roomId;
     private String checkIn;
     private String checkOut;
@@ -18,7 +18,7 @@ public class ReservationDTO implements Serializable {
     // Default Constructor
     public ReservationDTO() {}
 
-    // Full Constructor (සමහර විට පරීක්ෂණ සඳහා අවශ්‍ය වේ)
+
     public ReservationDTO(String resId, String guestId, String guestName, String roomId, String checkIn, String checkOut, double totalAmount) {
         this.resId = resId;
         this.guestId = guestId;
@@ -51,7 +51,7 @@ public class ReservationDTO implements Serializable {
     public double getTotalAmount() { return totalAmount; }
     public void setTotalAmount(double totalAmount) { this.totalAmount = totalAmount; }
 
-    // toString() method එක Debugging සඳහා ඉතා වැදගත් වේ
+
     @Override
     public String toString() {
         return "ReservationDTO{" +
