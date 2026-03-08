@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ocean_view_resort:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="519d4ee9-bfd0-45ad-842d-b5daba34eeb1" name="Changes" comment="Set up Bill DTO,suitable for billing logic">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T104644.500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T110808.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T110817.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T110830.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T111107.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T111118.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T113017.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T113026.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T113211.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T113223.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T113708.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T113717.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T115057.200.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T121200.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T185929.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T185945.500.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T190029.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T190101.200.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T190107.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T190728.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-03T190811.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-04T111129.200.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-04T111431.200.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_7_2026_7_17_AM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_7_2026_7_17_AM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_7_2026_7_17_AM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_7_2026_7_17_AM__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_7_2026_7_25_AM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_7_2026_7_25_AM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_7_2026_7_25_AM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_7_2026_7_25_AM__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/controller/BillingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/controller/NotificationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/controller/ReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/controller/ReservationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/dao/ReportDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/dao/impl/ReportDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/dto/ReportDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/service/ReportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/service/RoomService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/service/impl/ReportServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/servlet/AuthServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/servlet/BillingServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/servlet/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/servlet/NotificationServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/servlet/ReportServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/servlet/ReservationServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/model/Report.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin_dashboard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/billing.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/help.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/logout.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/receptionist_dashboard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/signup.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/staff_dashboard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/test-api.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/beans.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/META-INF/beans.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/DBTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/HelloResource.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/TestApp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/controller/AuthController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/controller/BillingController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/controller/NotificationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/controller/ReportController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/controller/ReservationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dao/BillDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dao/CrudDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dao/GuestDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dao/NotificationDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dao/ReportDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dao/ReservationDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dao/RoomDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dao/UserDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dao/impl/BillDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dao/impl/GuestDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dao/impl/NotificationDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dao/impl/ReportDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dao/impl/ReservationDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dao/impl/RoomDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dao/impl/UserDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dto/BillDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dto/GuestDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dto/NotificationDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dto/ReportDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dto/ReservationDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dto/ResponseDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dto/RoomDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/dto/UserDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/service/AuthService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/service/BillingService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/service/NotificationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/service/ReportService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/service/ReservationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/service/RoomService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/service/impl/AuthServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/service/impl/BillingServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/service/impl/NotificationServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/service/impl/ReportServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/service/impl/ReservationServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/servlet/AuthServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/servlet/BillingServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/servlet/LogoutServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/servlet/NotificationServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/servlet/ReportServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/api/servlet/ReservationServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/model/Admin.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/model/Bill.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/model/Guest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/model/Notification.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/model/Receptionist.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/model/Report.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/model/Reservation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/model/Room.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/model/Staff.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/model/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/classes/com/oceanview/ocean_view_resort/util/DBConnection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/HikariCP-5.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/angus-activation-2.0.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/antlr4-runtime-4.13.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/byte-buddy-1.17.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/classmate-1.7.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/hibernate-core-7.0.4.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/hibernate-models-1.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/hibernate-validator-9.0.1.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/istack-commons-runtime-4.1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/jakarta.activation-api-2.1.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/jakarta.inject-api-2.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/jakarta.persistence-api-3.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/jakarta.transaction-api-2.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/jakarta.validation-api-3.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/jakarta.xml.bind-api-4.0.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/jaxb-core-4.0.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/jaxb-runtime-4.0.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/jboss-logging-3.6.1.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-j-8.3.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/protobuf-java-3.25.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/slf4j-api-1.7.36.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/WEB-INF/lib/txw2-4.0.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/admin_dashboard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/billing.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/help.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/logout.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/receptionist_dashboard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/signup.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-0.1.0-SNAPSHOT/staff_dashboard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ocean_view_resort-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database.sql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTTP Request" />
+        <option value="Jsp File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="database-setup" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="model-dto-feature" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Uththama178&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Uththama178/ocean_view_resort.git&quot;,
+    &quot;accountId&quot;: &quot;0810a724-004f-423c-bd19-173624227ca3&quot;
+  }
+}</component>
+  <component name="HttpClientOnboardingState">{
+  &quot;isOnboardingCommentShown&quot;: true
+}</component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="39h9PCidyIY8qIVo89ZwZ7TU22b" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AppInitializer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DBTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.DBTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.com.oceanview.ocean_view_resort.util.DBTest.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test-api | 1. Test Authentication (Login).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test-api | 2. Test Reservation (Booking).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test-api | Test Authentication (Login).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test-api | Test Reservation (Booking).executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.signup.jsp.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.52.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.index.jsp.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.signup.jsp.executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.52">
+    <configuration name="DBTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.oceanview.ocean_view_resort.DBTest" />
+      <module name="ocean_view_resort" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.oceanview.ocean_view_resort.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.oceanview.ocean_view_resort.TestApp" />
+      <module name="ocean_view_resort" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.oceanview.ocean_view_resort.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-api | 1. Test Authentication (Login)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/test-api.http" executionIdentifier="1. Test Authentication (Login)" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="signup.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/ocean_view_resort_war_exploded/signup.jsp">
+      <method v="2" />
+    </configuration>
+    <configuration name="Tomcat 10.1.52" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.52" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <deployment>
+        <artifact name="ocean_view_resort:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/ocean_view_resort_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="ae8ea003-0e5f-47b1-9607-ed57d2ee824b" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50778" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="ocean_view_resort:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="signup.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 10.1.52" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/signup.jsp" />
+      <deployment>
+        <artifact name="ocean_view_resort:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/ocean_view_resort_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="0ff00e92-4531-4899-bb6e-019833f70c40" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="ocean_view_resort:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TestApp" />
+        <item itemvalue="HTTP Request.test-api | 1. Test Authentication (Login)" />
+        <item itemvalue="Application.DBTest" />
+        <item itemvalue="JavaScript Debug.signup.jsp" />
+        <item itemvalue="Tomcat Server.signup.jsp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="519d4ee9-bfd0-45ad-842d-b5daba34eeb1" name="Changes" comment="" />
+      <created>1771137508782</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1771137508782</updated>
+      <workItem from="1771137512510" duration="1229000" />
+      <workItem from="1771143778992" duration="2554000" />
+      <workItem from="1771177831913" duration="1987000" />
+      <workItem from="1771184976807" duration="1596000" />
+      <workItem from="1771216550745" duration="1961000" />
+      <workItem from="1771242371748" duration="4860000" />
+      <workItem from="1771261578654" duration="3208000" />
+      <workItem from="1771303048630" duration="4594000" />
+      <workItem from="1771324144018" duration="2287000" />
+      <workItem from="1771405742518" duration="2015000" />
+      <workItem from="1771408703258" duration="1532000" />
+      <workItem from="1771419279643" duration="5629000" />
+      <workItem from="1771433851305" duration="4931000" />
+      <workItem from="1771493925098" duration="5379000" />
+      <workItem from="1771510992839" duration="5000" />
+      <workItem from="1771526919126" duration="93000" />
+      <workItem from="1771589295604" duration="4000" />
+      <workItem from="1771592794758" duration="5910000" />
+      <workItem from="1771599201394" duration="293000" />
+      <workItem from="1771613131211" duration="139000" />
+      <workItem from="1771613825816" duration="142000" />
+      <workItem from="1771655711645" duration="5022000" />
+      <workItem from="1771669934274" duration="60000" />
+      <workItem from="1771682131936" duration="28000" />
+      <workItem from="1771820879003" duration="17000" />
+      <workItem from="1771902921954" duration="87000" />
+      <workItem from="1772029801025" duration="1285000" />
+      <workItem from="1772031113494" duration="8984000" />
+      <workItem from="1772055162849" duration="13000" />
+      <workItem from="1772136300043" duration="36000" />
+      <workItem from="1772209102838" duration="17000" />
+      <workItem from="1772257795967" duration="3545000" />
+      <workItem from="1772261894413" duration="389000" />
+      <workItem from="1772263026740" duration="64000" />
+      <workItem from="1772282735507" duration="5431000" />
+      <workItem from="1772447096725" duration="2760000" />
+      <workItem from="1772457698787" duration="2251000" />
+      <workItem from="1772464874109" duration="17875000" />
+      <workItem from="1772508195572" duration="14479000" />
+      <workItem from="1772526439134" duration="21000" />
+      <workItem from="1772530259934" duration="2177000" />
+      <workItem from="1772538775461" duration="6676000" />
+      <workItem from="1772548703647" duration="3425000" />
+      <workItem from="1772591417629" duration="3344000" />
+      <workItem from="1772599072278" duration="4283000" />
+      <workItem from="1772615647960" duration="257000" />
+      <workItem from="1772621745035" duration="2213000" />
+      <workItem from="1772624813780" duration="1052000" />
+      <workItem from="1772629707177" duration="155000" />
+      <workItem from="1772684361464" duration="13963000" />
+      <workItem from="1772709564550" duration="4085000" />
+      <workItem from="1772722604678" duration="5000" />
+      <workItem from="1772725982090" duration="3921000" />
+      <workItem from="1772789957128" duration="47000" />
+      <workItem from="1772793351883" duration="90000" />
+      <workItem from="1772815108341" duration="89000" />
+      <workItem from="1772815606657" duration="1634000" />
+      <workItem from="1772820816334" duration="1636000" />
+      <workItem from="1772825092106" duration="270000" />
+      <workItem from="1772827807190" duration="695000" />
+      <workItem from="1772835172431" duration="5329000" />
+      <workItem from="1772845533512" duration="5726000" />
+      <workItem from="1772851505298" duration="23000" />
+      <workItem from="1772853798390" duration="86000" />
+      <workItem from="1772856523493" duration="2079000" />
+      <workItem from="1772912741675" duration="873000" />
+      <workItem from="1772954928850" duration="993000" />
+      <workItem from="1772957146056" duration="333000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial database setup and documentation">
+      <option name="closed" value="true" />
+      <created>1771263071012</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1771263071013</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Set up Bill DTO,suitable for billing logic">
+      <option name="closed" value="true" />
+      <created>1772847741304</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772847741304</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="database-setup" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="database-setup" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial database setup and documentation" />
+    <MESSAGE value="Set up Bill DTO,suitable for billing logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set up Bill DTO,suitable for billing logic" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/admin_dashboard.jsp</url>
+          <line>530</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

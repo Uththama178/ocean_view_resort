@@ -1,0 +1,310 @@
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/auth
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+cookie: JSESSIONID=F49A055C68F44DBCEB08938884F03A15
+content-length: 32
+
+username=admin&password=admin123
+
+<> 2026-03-04T111431.200.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/auth
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+cookie: JSESSIONID=29EA5D68C52ACF3E060BC5F82B08868E
+content-length: 34
+
+username=uththama&password=abhi123
+
+<> 2026-03-04T111129.200.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/auth
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 34
+
+username=uththama&password=abhi123
+
+<> 2026-03-03T190811.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/auth
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 34
+
+username=uththama&password=abhi123
+
+<> 2026-03-03T190728.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/auth
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 34
+
+username=uththama&password=abhi123
+
+<> 2026-03-03T190107.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/reservation
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 97
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=29EA5D68C52ACF3E060BC5F82B08868E
+
+resId=RES_015&guestId=G001&roomId=R001&checkIn=2026-03-01&checkOut=2026-03-05&totalAmount=20000.0
+
+<> 2026-03-03T190101.200.json
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/auth
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 34
+
+username=uththama&password=abhi123
+
+<> 2026-03-03T190029.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/reservation
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 97
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=29EA5D68C52ACF3E060BC5F82B08868E
+
+resId=RES_001&guestId=G001&roomId=R001&checkIn=2026-03-01&checkOut=2026-03-05&totalAmount=15000.0
+
+<> 2026-03-03T185945.500.json
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/auth
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 32
+
+username=admin&password=admin123
+
+<> 2026-03-03T185929.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/auth
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 32
+
+username=admin&password=admin123
+
+<> 2026-03-03T121200.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/reservation
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 97
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=3A5C49E73B8A1B25C582B7BF4ACB0398
+
+resId=RES_001&guestId=G001&roomId=R001&checkIn=2026-03-01&checkOut=2026-03-05&totalAmount=15000.0
+
+<> 2026-03-03T115057.200.json
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/reservation
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 97
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=3A5C49E73B8A1B25C582B7BF4ACB0398
+
+resId=RES_001&guestId=G001&roomId=R001&checkIn=2026-03-01&checkOut=2026-03-05&totalAmount=15000.0
+
+<> 2026-03-03T113717.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/auth
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 32
+
+username=admin&password=admin123
+
+<> 2026-03-03T113708.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/auth
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 32
+
+username=admin&password=admin123
+
+<> 2026-03-03T113223.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/reservation
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 97
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=D1DD8B2EF30204AA799478CCE0CB153C
+
+resId=RES_001&guestId=G001&roomId=R001&checkIn=2026-03-01&checkOut=2026-03-05&totalAmount=15000.0
+
+<> 2026-03-03T113211.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/reservation
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 97
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=D1DD8B2EF30204AA799478CCE0CB153C
+
+resId=RES_001&guestId=G001&roomId=R001&checkIn=2026-03-01&checkOut=2026-03-05&totalAmount=15000.0
+
+<> 2026-03-03T113026.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/auth
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 32
+
+username=admin&password=admin123
+
+<> 2026-03-03T113017.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/model/reservation
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 97
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=548ED32C349E5988EAAB7118228FEC21
+
+resId=RES_001&guestId=G001&roomId=R001&checkIn=2026-03-01&checkOut=2026-03-05&totalAmount=15000.0
+
+<> 2026-03-03T111118.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/model/reservation
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 97
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=548ED32C349E5988EAAB7118228FEC21
+
+resId=RES_001&guestId=G001&roomId=R001&checkIn=2026-03-01&checkOut=2026-03-05&totalAmount=15000.0
+
+<> 2026-03-03T111107.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/auth
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 32
+
+username=admin&password=admin123
+
+<> 2026-03-03T110830.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/reservation
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 97
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=548ED32C349E5988EAAB7118228FEC21
+
+resId=RES_001&guestId=G001&roomId=R001&checkIn=2026-03-01&checkOut=2026-03-05&totalAmount=15000.0
+
+<> 2026-03-03T110817.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/auth
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 32
+
+username=admin&password=admin123
+
+<> 2026-03-03T110808.404.html
+
+###
+
+POST http://localhost:8080/ocean_view_resort_war_exploded/api/auth
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 32
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+username=admin&password=admin123
+
+<> 2026-03-03T104644.500.html
+
+###
+

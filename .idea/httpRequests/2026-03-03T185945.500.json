@@ -1,0 +1,4 @@
+{
+  "message": "Server Error: Duplicate entry 'RES_001' for key 'reservation.PRIMARY'",
+  "status": false
+}

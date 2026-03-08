@@ -23,8 +23,9 @@ CREATE TABLE user (
 );
 INSERT INTO user (userId, username, password, role, fullName, status) VALUES
                                                                           ('U001', 'admin', 'admin123', 'ADMIN', 'System Administrator', 'ACTIVE'),
-                                                                          ('U002', 'mala', 'mala123', 'RECEPTIONIST', 'Mala Silva', 'ACTIVE'),
+                                                                          ('U002', 'mala', 'mala123', 'STAFF', 'Mala Silva', 'ACTIVE'),
                                                                           ('U003', 'kamal', 'kamal123', 'RECEPTIONIST', 'Kamal Perera', 'ACTIVE');
+
 
 
 
@@ -34,6 +35,7 @@ CREATE TABLE guest (
                        contact VARCHAR(15),
                        email VARCHAR(100),
                        nic VARCHAR(20),
+                       address VARCHAR(255),
                        CONSTRAINT pk_guest PRIMARY KEY (guestId),
                        CONSTRAINT uk_nic UNIQUE (nic)
 );
@@ -60,22 +62,27 @@ INSERT INTO room (roomId, type, price, status) VALUES
 
 
 
-CREATE TABLE reservation (
-                             resId VARCHAR(10) NOT NULL,
-                             guestId VARCHAR(10),
-                             roomId VARCHAR(10),
-                             checkIn DATE NOT NULL,
-                             checkOut DATE NOT NULL,
-                             status VARCHAR(20) DEFAULT 'CONFIRMED',
-                             CONSTRAINT pk_reservation PRIMARY KEY (resId),
-                             CONSTRAINT fk_res_guest FOREIGN KEY (guestId) REFERENCES guest(guestId) ON DELETE CASCADE,
-                             CONSTRAINT fk_res_room FOREIGN KEY (roomId) REFERENCES room(roomId) ON DELETE SET NULL
+
+-- 1. මුලින්ම වගුව නිර්මාණය කරන්න (සෙමිකෝලනය අමතක කරන්න එපා)
+CREATE TABLE IF NOT EXISTS reservation (
+                                           resId VARCHAR(10) NOT NULL,
+                                           guestId VARCHAR(10),
+                                           roomId VARCHAR(10),
+                                           checkIn DATE NOT NULL,
+                                           checkOut DATE NOT NULL,
+                                           status VARCHAR(20) DEFAULT 'CONFIRMED',
+                                           CONSTRAINT pk_reservation PRIMARY KEY (resId),
+                                           CONSTRAINT fk_res_guest FOREIGN KEY (guestId) REFERENCES guest(guestId) ON DELETE CASCADE,
+                                           CONSTRAINT fk_res_room FOREIGN KEY (roomId) REFERENCES room(roomId) ON DELETE SET NULL
 );
-INSERT INTO reservation (resId, guestId, roomId, checkIn, checkOut, status) VALUES
-                                                                                ('RES001', 'G001', 'R001', '2026-02-16', '2026-02-18', 'CONFIRMED'),
-                                                                                ('RES002', 'G002', 'R002', '2026-02-20', '2026-02-25', 'PENDING');
 
 
+-- 3. දැන් දත්ත ඇතුළත් කරන්න (INSERT)
+-- සටහන: RES001 සහ RES002 දැනටමත් තිබේ නම් මුලින්ම එම වගුව Clear කර ගන්න (TRUNCATE TABLE reservation;)
+INSERT INTO reservation (resId, guestId, roomId, checkIn, checkOut, status, total_amount) VALUES
+                                                                                              ('RES004', 'G001', 'R001', '2026-02-16', '2026-02-18', 'CONFIRMED', 12500.0),
+                                                                                              ('RES005', 'G002', 'R002', '2026-02-20', '2026-02-25', 'PENDING', 28000.0),
+                                                                                              ('RES003', 'G001', 'R003', '2026-02-25', '2026-02-28', 'CONFIRMED', 45000.0);
 
 CREATE TABLE bill (
                       billId VARCHAR(10) NOT NULL,
@@ -89,5 +96,7 @@ INSERT INTO bill (billId, resId, totalAmount) VALUES
                                                   ('B001', 'RES001', 10000.00),
                                                   ('B002', 'RES002', 60000.00);
 
+-- 2. දැන් total_amount තීරුව එකතු කරන්න
+ALTER TABLE reservation ADD COLUMN total_amount DOUBLE DEFAULT 0.0;
 
 

@@ -1,0 +1,433 @@
+Index: src/main/java/com/oceanview/ocean_view_resort/model/Guest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.oceanview.ocean_view_resort.model;\r\nimport java.io.Serializable;\r\n\r\npublic class Guest implements Serializable {\r\n    private String guestId;\r\n    private String name;\r\n    private String contact;\r\n    private String email;\r\n    private String nic;\r\n\r\n    public Guest() {}\r\n    public Guest(String guestId, String name, String contact, String email, String nic) {\r\n        this.guestId = guestId;\r\n        this.name = name;\r\n        this.contact = contact;\r\n        this.email = email;\r\n        this.nic = nic;\r\n    }\r\n\r\n    // Getters\r\n    public String getGuestId() { return guestId; }\r\n    public String getName() { return name; }\r\n    public String getContact() { return contact; }\r\n    public String getEmail() { return email; }\r\n    public String getNic() { return nic; }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/oceanview/ocean_view_resort/model/Guest.java b/src/main/java/com/oceanview/ocean_view_resort/model/Guest.java
+--- a/src/main/java/com/oceanview/ocean_view_resort/model/Guest.java	(revision 3ecf93d40209ea5c6d29da545535315ca85b6731)
++++ b/src/main/java/com/oceanview/ocean_view_resort/model/Guest.java	(date 1772512365869)
+@@ -1,4 +1,5 @@
+ package com.oceanview.ocean_view_resort.model;
++
+ import java.io.Serializable;
+ 
+ public class Guest implements Serializable {
+@@ -6,21 +7,34 @@
+     private String name;
+     private String contact;
+     private String email;
+-    private String nic;
++    private String address;
+ 
++    // Default Constructor
+     public Guest() {}
+-    public Guest(String guestId, String name, String contact, String email, String nic) {
++
++    // Full Constructor (පරාමිතීන් 5ම මෙහි ඇත)
++    public Guest(String guestId, String name, String contact, String email, String address) {
+         this.guestId = guestId;
+         this.name = name;
+         this.contact = contact;
+         this.email = email;
+-        this.nic = nic;
++        this.address = address;
+     }
+ 
+-    // Getters
++    // --- Getters and Setters (සියල්ලම මෙහි ඇත) ---
++
+     public String getGuestId() { return guestId; }
++    public void setGuestId(String guestId) { this.guestId = guestId; }
++
+     public String getName() { return name; }
++    public void setName(String name) { this.name = name; }
++
+     public String getContact() { return contact; }
++    public void setContact(String contact) { this.contact = contact; }
++
+     public String getEmail() { return email; }
+-    public String getNic() { return nic; }
++    public void setEmail(String email) { this.email = email; }
++
++    public String getAddress() { return address; }
++    public void setAddress(String address) { this.address = address; }
+ }
+\ No newline at end of file
+Index: src/main/java/com/oceanview/ocean_view_resort/model/Reservation.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.oceanview.ocean_view_resort.model;\r\nimport java.io.Serializable;\r\nimport java.sql.Date;\r\n\r\npublic class Reservation implements Serializable {\r\n    private String resId;\r\n    private String guestId;\r\n    private String roomId;\r\n    private Date checkIn;\r\n    private Date checkOut;\r\n    private String status;\r\n\r\n    public Reservation() {}\r\n    public Reservation(String resId, String guestId, String roomId, Date checkIn, Date checkOut, String status) {\r\n        this.resId = resId;\r\n        this.guestId = guestId;\r\n        this.roomId = roomId;\r\n        this.checkIn = checkIn;\r\n        this.checkOut = checkOut;\r\n        this.status = status;\r\n    }\r\n\r\n    // \uD83D\uDCA1 Getters\r\n    public String getResId() { return resId; }\r\n    public String getGuestId() { return guestId; }\r\n    public String getRoomId() { return roomId; }\r\n    public Date getCheckIn() { return checkIn; }\r\n    public Date getCheckOut() { return checkOut; }\r\n    public String getStatus() { return status; }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/oceanview/ocean_view_resort/model/Reservation.java b/src/main/java/com/oceanview/ocean_view_resort/model/Reservation.java
+--- a/src/main/java/com/oceanview/ocean_view_resort/model/Reservation.java	(revision 3ecf93d40209ea5c6d29da545535315ca85b6731)
++++ b/src/main/java/com/oceanview/ocean_view_resort/model/Reservation.java	(date 1772510918546)
+@@ -1,30 +1,42 @@
+ package com.oceanview.ocean_view_resort.model;
++
+ import java.io.Serializable;
+-import java.sql.Date;
++import java.time.LocalDate;
+ 
+ public class Reservation implements Serializable {
+     private String resId;
+     private String guestId;
+     private String roomId;
+-    private Date checkIn;
+-    private Date checkOut;
++    private LocalDate checkIn;
++    private LocalDate checkOut;
+     private String status;
++    private double totalAmount; // නිවැරදි කරන ලද කොටස
+ 
+     public Reservation() {}
+-    public Reservation(String resId, String guestId, String roomId, Date checkIn, Date checkOut, String status) {
++
++    public Reservation(String resId, String guestId, String roomId, LocalDate checkIn, LocalDate checkOut, String status, double totalAmount) {
+         this.resId = resId;
+         this.guestId = guestId;
+         this.roomId = roomId;
+         this.checkIn = checkIn;
+         this.checkOut = checkOut;
+         this.status = status;
++        this.totalAmount = totalAmount;
+     }
+ 
+-    // 💡 Getters
++    // Getters and Setters
+     public String getResId() { return resId; }
++    public void setResId(String resId) { this.resId = resId; }
+     public String getGuestId() { return guestId; }
++    public void setGuestId(String guestId) { this.guestId = guestId; }
+     public String getRoomId() { return roomId; }
+-    public Date getCheckIn() { return checkIn; }
+-    public Date getCheckOut() { return checkOut; }
++    public void setRoomId(String roomId) { this.roomId = roomId; }
++    public LocalDate getCheckIn() { return checkIn; }
++    public void setCheckIn(LocalDate checkIn) { this.checkIn = checkIn; }
++    public LocalDate getCheckOut() { return checkOut; }
++    public void setCheckOut(LocalDate checkOut) { this.checkOut = checkOut; }
+     public String getStatus() { return status; }
+-}
++    public void setStatus(String status) { this.status = status; }
++    public double getTotalAmount() { return totalAmount; }
++    public void setTotalAmount(double totalAmount) { this.totalAmount = totalAmount; }
++}
+\ No newline at end of file
+Index: src/main/java/com/oceanview/ocean_view_resort/util/DBConnection.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.oceanview.ocean_view_resort.util;\r\n\r\nimport com.zaxxer.hikari.HikariConfig;\r\nimport com.zaxxer.hikari.HikariDataSource;\r\n\r\nimport java.io.IOException;\r\nimport java.io.InputStream;\r\nimport java.sql.Connection;\r\nimport java.sql.SQLException;\r\nimport java.util.Properties;\r\n\r\npublic class DBConnection {\r\n\r\n    private static HikariDataSource dataSource;\r\n\r\n    // Static block - runs only once\r\n    static {\r\n        try {\r\n            Properties properties = new Properties();\r\n            InputStream input = DBConnection.class\r\n                    .getClassLoader()\r\n                    .getResourceAsStream(\"application.properties\");\r\n\r\n            properties.load(input);\r\n\r\n            HikariConfig config = new HikariConfig();\r\n            config.setJdbcUrl(properties.getProperty(\"db.url\"));\r\n            config.setUsername(properties.getProperty(\"db.username\"));\r\n            config.setPassword(properties.getProperty(\"db.password\"));\r\n\r\n            config.setMaximumPoolSize(10); // max 10 connections\r\n            config.setMinimumIdle(2);\r\n            config.setIdleTimeout(30000);\r\n\r\n            dataSource = new HikariDataSource(config);\r\n\r\n        } catch (IOException e) {\r\n            throw new RuntimeException(\"Failed to load DB properties\", e);\r\n        }\r\n    }\r\n\r\n    private DBConnection() {\r\n        // prevent object creation\r\n    }\r\n\r\n    public static Connection getConnection() throws SQLException {\r\n        return dataSource.getConnection();\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/oceanview/ocean_view_resort/util/DBConnection.java b/src/main/java/com/oceanview/ocean_view_resort/util/DBConnection.java
+--- a/src/main/java/com/oceanview/ocean_view_resort/util/DBConnection.java	(revision 3ecf93d40209ea5c6d29da545535315ca85b6731)
++++ b/src/main/java/com/oceanview/ocean_view_resort/util/DBConnection.java	(date 1772515928175)
+@@ -13,7 +13,6 @@
+ 
+     private static HikariDataSource dataSource;
+ 
+-    // Static block - runs only once
+     static {
+         try {
+             Properties properties = new Properties();
+@@ -21,17 +20,29 @@
+                     .getClassLoader()
+                     .getResourceAsStream("application.properties");
+ 
++            if (input == null) {
++                throw new RuntimeException("Error: application.properties file not found in resources!");
++            }
++
+             properties.load(input);
+ 
+             HikariConfig config = new HikariConfig();
++
++            // 1. මෙම පේළිය අනිවාර්යයෙන්ම එක් කරන්න (Driver එක හඳුන්වා දීමට)
++            config.setDriverClassName("com.mysql.cj.jdbc.Driver");
++
+             config.setJdbcUrl(properties.getProperty("db.url"));
+             config.setUsername(properties.getProperty("db.username"));
+             config.setPassword(properties.getProperty("db.password"));
+ 
+-            config.setMaximumPoolSize(10); // max 10 connections
++            config.setMaximumPoolSize(10);
+             config.setMinimumIdle(2);
+             config.setIdleTimeout(30000);
+ 
++            // 2. ඇතැම් වෙලාවට Driver එක Load වීමට කාලය අවශ්‍ය නිසා මෙය එක් කිරීම හොඳයි
++            config.addDataSourceProperty("cachePrepStmts", "true");
++            config.addDataSourceProperty("prepStmtCacheSize", "250");
++
+             dataSource = new HikariDataSource(config);
+ 
+         } catch (IOException e) {
+@@ -39,12 +50,12 @@
+         }
+     }
+ 
+-    private DBConnection() {
+-        // prevent object creation
+-    }
++    private DBConnection() { }
+ 
+     public static Connection getConnection() throws SQLException {
++        if (dataSource == null) {
++            throw new SQLException("DataSource is not initialized properly!");
++        }
+         return dataSource.getConnection();
+     }
+-}
+-
++}
+\ No newline at end of file
+Index: database.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>USE ocean_view_db;\r\nDROP TABLE IF EXISTS bill;\r\nDROP TABLE IF EXISTS reservation;\r\nDROP TABLE IF EXISTS room;\r\nDROP TABLE IF EXISTS guest;\r\nDROP TABLE IF EXISTS user;\r\nDROP TABLE IF EXISTS notification;\r\n\r\nSELECT * FROM user;\r\nSELECT * FROM guest;\r\nSELECT * FROM room;\r\nSELECT * FROM reservation;\r\nSELECT * FROM bill;\r\nSELECT * FROM notification;\r\n\r\n\r\nCREATE TABLE user (\r\n                      userId VARCHAR(10) NOT NULL,\r\n                      username VARCHAR(50) NOT NULL,\r\n                      password VARCHAR(50) NOT NULL,\r\n                      role ENUM('ADMIN', 'RECEPTIONIST', 'STAFF') NOT NULL,\r\n                      fullName VARCHAR(100),\r\n                      status VARCHAR(10) DEFAULT 'ACTIVE',\r\n                      CONSTRAINT pk_user PRIMARY KEY (userId),\r\n                      CONSTRAINT uk_username UNIQUE (username)\r\n);\r\nINSERT INTO user (userId, username, password, role, fullName, status) VALUES\r\n                                                                          ('U001', 'admin', 'admin123', 'ADMIN', 'System Administrator', 'ACTIVE'),\r\n                                                                          ('U002', 'mala', 'mala123', 'RECEPTIONIST', 'Mala Silva', 'ACTIVE'),\r\n                                                                          ('U003', 'kamal', 'kamal123', 'RECEPTIONIST', 'Kamal Perera', 'ACTIVE');\r\n\r\n\r\n\r\nCREATE TABLE guest (\r\n                       guestId VARCHAR(10) NOT NULL,\r\n                       name VARCHAR(100) NOT NULL,\r\n                       contact VARCHAR(15),\r\n                       email VARCHAR(100),\r\n                       nic VARCHAR(20),\r\n                       CONSTRAINT pk_guest PRIMARY KEY (guestId),\r\n                       CONSTRAINT uk_nic UNIQUE (nic)\r\n);\r\nINSERT INTO guest (guestId, name, contact, email, nic) VALUES\r\n                                                           ('G001', 'John Doe', '0771234567', 'john@example.com', '199012345678'),\r\n                                                           ('G002', 'Nimmi Fernando', '0719876543', 'nimmi@example.com', '956781234V'),\r\n                                                           ('G003', 'David Smith', '0751112223', 'david@example.com', '198599887766');\r\n\r\n\r\n\r\nCREATE TABLE room (\r\n                      roomId VARCHAR(10) NOT NULL,\r\n                      type VARCHAR(50) NOT NULL,\r\n                      price DOUBLE NOT NULL CHECK (price > 0), -- GFG Standard: Validation constraint\r\n                      status ENUM('AVAILABLE', 'OCCUPIED', 'MAINTENANCE') DEFAULT 'AVAILABLE',\r\n                      CONSTRAINT pk_room PRIMARY KEY (roomId)\r\n);\r\nINSERT INTO room (roomId, type, price, status) VALUES\r\n                                                   ('R001', 'Single Standard', 5000.00, 'AVAILABLE'),\r\n                                                   ('R002', 'Double Deluxe', 12000.00, 'AVAILABLE'),\r\n                                                   ('R003', 'Luxury Suite', 25000.00, 'OCCUPIED'),\r\n                                                   ('R004', 'Family Room', 18000.00, 'MAINTENANCE'),\r\n                                                   ('R005', 'Single Standard', 5500.00, 'AVAILABLE');\r\n\r\n\r\n\r\nCREATE TABLE reservation (\r\n                             resId VARCHAR(10) NOT NULL,\r\n                             guestId VARCHAR(10),\r\n                             roomId VARCHAR(10),\r\n                             checkIn DATE NOT NULL,\r\n                             checkOut DATE NOT NULL,\r\n                             status VARCHAR(20) DEFAULT 'CONFIRMED',\r\n                             CONSTRAINT pk_reservation PRIMARY KEY (resId),\r\n                             CONSTRAINT fk_res_guest FOREIGN KEY (guestId) REFERENCES guest(guestId) ON DELETE CASCADE,\r\n                             CONSTRAINT fk_res_room FOREIGN KEY (roomId) REFERENCES room(roomId) ON DELETE SET NULL\r\n);\r\nINSERT INTO reservation (resId, guestId, roomId, checkIn, checkOut, status) VALUES\r\n                                                                                ('RES001', 'G001', 'R001', '2026-02-16', '2026-02-18', 'CONFIRMED'),\r\n                                                                                ('RES002', 'G002', 'R002', '2026-02-20', '2026-02-25', 'PENDING');\r\n\r\n\r\n\r\nCREATE TABLE bill (\r\n                      billId VARCHAR(10) NOT NULL,\r\n                      resId VARCHAR(10),\r\n                      totalAmount DOUBLE NOT NULL,\r\n                      paymentDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\r\n                      CONSTRAINT pk_bill PRIMARY KEY (billId),\r\n                      CONSTRAINT fk_bill_res FOREIGN KEY (resId) REFERENCES reservation(resId) ON DELETE CASCADE\r\n);\r\nINSERT INTO bill (billId, resId, totalAmount) VALUES\r\n                                                  ('B001', 'RES001', 10000.00),\r\n                                                  ('B002', 'RES002', 60000.00);\r\n\r\n\r\n\r\nCREATE TABLE notification (\r\n                              notifId VARCHAR(10) NOT NULL,\r\n                              message TEXT NOT NULL,\r\n                              receiverRole ENUM('ADMIN', 'RECEPTIONIST', 'STAFF') NOT NULL,\r\n                              timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\r\n                              isRead BOOLEAN DEFAULT FALSE,\r\n                              CONSTRAINT pk_notification PRIMARY KEY (notifId)\r\n);\r\nINSERT INTO notification (notifId, message, receiverRole, isRead)\r\nVALUES ('N001', 'New Reservation: Room R005 booked by Receptionist Mala', 'ADMIN', FALSE);\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/database.sql b/database.sql
+--- a/database.sql	(revision 3ecf93d40209ea5c6d29da545535315ca85b6731)
++++ b/database.sql	(date 1772691960522)
+@@ -26,17 +26,19 @@
+ );
+ INSERT INTO user (userId, username, password, role, fullName, status) VALUES
+                                                                           ('U001', 'admin', 'admin123', 'ADMIN', 'System Administrator', 'ACTIVE'),
+-                                                                          ('U002', 'mala', 'mala123', 'RECEPTIONIST', 'Mala Silva', 'ACTIVE'),
++                                                                          ('U002', 'mala', 'mala123', 'STAFF', 'Mala Silva', 'ACTIVE'),
+                                                                           ('U003', 'kamal', 'kamal123', 'RECEPTIONIST', 'Kamal Perera', 'ACTIVE');
+ 
+ 
+ 
++
+ CREATE TABLE guest (
+                        guestId VARCHAR(10) NOT NULL,
+                        name VARCHAR(100) NOT NULL,
+                        contact VARCHAR(15),
+                        email VARCHAR(100),
+                        nic VARCHAR(20),
++                       address VARCHAR(255),
+                        CONSTRAINT pk_guest PRIMARY KEY (guestId),
+                        CONSTRAINT uk_nic UNIQUE (nic)
+ );
+@@ -63,22 +65,29 @@
+ 
+ 
+ 
+-CREATE TABLE reservation (
+-                             resId VARCHAR(10) NOT NULL,
+-                             guestId VARCHAR(10),
+-                             roomId VARCHAR(10),
+-                             checkIn DATE NOT NULL,
+-                             checkOut DATE NOT NULL,
+-                             status VARCHAR(20) DEFAULT 'CONFIRMED',
+-                             CONSTRAINT pk_reservation PRIMARY KEY (resId),
+-                             CONSTRAINT fk_res_guest FOREIGN KEY (guestId) REFERENCES guest(guestId) ON DELETE CASCADE,
+-                             CONSTRAINT fk_res_room FOREIGN KEY (roomId) REFERENCES room(roomId) ON DELETE SET NULL
++
++-- 1. මුලින්ම වගුව නිර්මාණය කරන්න (සෙමිකෝලනය අමතක කරන්න එපා)
++CREATE TABLE IF NOT EXISTS reservation (
++                                           resId VARCHAR(10) NOT NULL,
++                                           guestId VARCHAR(10),
++                                           roomId VARCHAR(10),
++                                           checkIn DATE NOT NULL,
++                                           checkOut DATE NOT NULL,
++                                           status VARCHAR(20) DEFAULT 'CONFIRMED',
++                                           CONSTRAINT pk_reservation PRIMARY KEY (resId),
++                                           CONSTRAINT fk_res_guest FOREIGN KEY (guestId) REFERENCES guest(guestId) ON DELETE CASCADE,
++                                           CONSTRAINT fk_res_room FOREIGN KEY (roomId) REFERENCES room(roomId) ON DELETE SET NULL
+ );
+-INSERT INTO reservation (resId, guestId, roomId, checkIn, checkOut, status) VALUES
+-                                                                                ('RES001', 'G001', 'R001', '2026-02-16', '2026-02-18', 'CONFIRMED'),
+-                                                                                ('RES002', 'G002', 'R002', '2026-02-20', '2026-02-25', 'PENDING');
+ 
++-- 2. දැන් total_amount තීරුව එකතු කරන්න
++ALTER TABLE reservation ADD COLUMN total_amount DOUBLE DEFAULT 0.0;
+ 
++-- 3. දැන් දත්ත ඇතුළත් කරන්න (INSERT)
++-- සටහන: RES001 සහ RES002 දැනටමත් තිබේ නම් මුලින්ම එම වගුව Clear කර ගන්න (TRUNCATE TABLE reservation;)
++INSERT INTO reservation (resId, guestId, roomId, checkIn, checkOut, status, total_amount) VALUES
++                                                                                              ('RES004', 'G001', 'R001', '2026-02-16', '2026-02-18', 'CONFIRMED', 12500.0),
++                                                                                              ('RES005', 'G002', 'R002', '2026-02-20', '2026-02-25', 'PENDING', 28000.0),
++                                                                                              ('RES003', 'G001', 'R003', '2026-02-25', '2026-02-28', 'CONFIRMED', 45000.0);
+ 
+ CREATE TABLE bill (
+                       billId VARCHAR(10) NOT NULL,
+Index: src/main/webapp/index.jsp
+===================================================================
+diff --git a/src/main/webapp/index.jsp b/src/main/webapp/index.jsp
+deleted file mode 100644
+--- a/src/main/webapp/index.jsp	(revision 3ecf93d40209ea5c6d29da545535315ca85b6731)
++++ /dev/null	(revision 3ecf93d40209ea5c6d29da545535315ca85b6731)
+@@ -1,16 +0,0 @@
+-<%--
+-  Created by IntelliJ IDEA.
+-  User: USER
+-  Date: 2/16/2026
+-  Time: 1:42 AM
+-  To change this template use File | Settings | File Templates.
+---%>
+-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+-<html>
+-<head>
+-    <title>Title</title>
+-</head>
+-<body>
+-
+-</body>
+-</html>
+Index: src/main/java/com/oceanview/ocean_view_resort/HelloApplication.java
+===================================================================
+diff --git a/src/main/java/com/oceanview/ocean_view_resort/HelloApplication.java b/src/main/java/com/oceanview/ocean_view_resort/HelloApplication.java
+deleted file mode 100644
+--- a/src/main/java/com/oceanview/ocean_view_resort/HelloApplication.java	(revision 3ecf93d40209ea5c6d29da545535315ca85b6731)
++++ /dev/null	(revision 3ecf93d40209ea5c6d29da545535315ca85b6731)
+@@ -1,9 +0,0 @@
+-package com.oceanview.ocean_view_resort;
+-
+-import jakarta.ws.rs.ApplicationPath;
+-import jakarta.ws.rs.core.Application;
+-
+-@ApplicationPath("/api")
+-public class HelloApplication extends Application {
+-
+-}
+\ No newline at end of file
+Index: src/main/java/com/oceanview/ocean_view_resort/api/dto/ReservationDTO.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.oceanview.ocean_view_resort.api.dto;\r\n\r\nimport java.sql.Date;\r\n\r\n/**\r\n * DTO for Handling Booking/Reservation Logic.\r\n * Captures duration of stay for cost computation.\r\n */\r\npublic class ReservationDTO {\r\n    private String resId;\r\n    private String guestId;\r\n    private String roomId;\r\n    private Date checkInDate;\r\n    private Date checkOutDate;\r\n\r\n    public ReservationDTO() {}\r\n\r\n    public ReservationDTO(String resId, String guestId, String roomId, Date checkInDate, Date checkOutDate) {\r\n        this.resId = resId;\r\n        this.guestId = guestId;\r\n        this.roomId = roomId;\r\n        this.checkInDate = checkInDate;\r\n        this.checkOutDate = checkOutDate;\r\n    }\r\n\r\n    // Logic: Essential for calculating number of nights\r\n    public Date getCheckInDate() { return checkInDate; }\r\n    public void setCheckInDate(Date checkInDate) { this.checkInDate = checkInDate; }\r\n\r\n    public Date getCheckOutDate() { return checkOutDate; }\r\n    public void setCheckOutDate(Date checkOutDate) { this.checkOutDate = checkOutDate; }\r\n\r\n    public String getResId() { return resId; }\r\n    public String getRoomId() { return roomId; }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/oceanview/ocean_view_resort/api/dto/ReservationDTO.java b/src/main/java/com/oceanview/ocean_view_resort/api/dto/ReservationDTO.java
+--- a/src/main/java/com/oceanview/ocean_view_resort/api/dto/ReservationDTO.java	(revision 3ecf93d40209ea5c6d29da545535315ca85b6731)
++++ b/src/main/java/com/oceanview/ocean_view_resort/api/dto/ReservationDTO.java	(date 1772511541084)
+@@ -1,35 +1,64 @@
+ package com.oceanview.ocean_view_resort.api.dto;
+ 
+-import java.sql.Date;
++import java.io.Serializable;
+ 
+ /**
+- * DTO for Handling Booking/Reservation Logic.
+- * Captures duration of stay for cost computation.
++ * @author Batch_Top_Candidate
++ * Data Transfer Object for Reservation logic.
+  */
+-public class ReservationDTO {
++public class ReservationDTO implements Serializable {
+     private String resId;
+     private String guestId;
++    private String guestName; // Scenario එකේ ඉල්ලන පරිදි Guest Name පෙන්වීමට අවශ්‍ය වේ
+     private String roomId;
+-    private Date checkInDate;
+-    private Date checkOutDate;
++    private String checkIn;
++    private String checkOut;
++    private double totalAmount;
+ 
++    // Default Constructor
+     public ReservationDTO() {}
+ 
+-    public ReservationDTO(String resId, String guestId, String roomId, Date checkInDate, Date checkOutDate) {
++    // Full Constructor (සමහර විට පරීක්ෂණ සඳහා අවශ්‍ය වේ)
++    public ReservationDTO(String resId, String guestId, String guestName, String roomId, String checkIn, String checkOut, double totalAmount) {
+         this.resId = resId;
+         this.guestId = guestId;
++        this.guestName = guestName;
+         this.roomId = roomId;
+-        this.checkInDate = checkInDate;
+-        this.checkOutDate = checkOutDate;
++        this.checkIn = checkIn;
++        this.checkOut = checkOut;
++        this.totalAmount = totalAmount;
+     }
+ 
+-    // Logic: Essential for calculating number of nights
+-    public Date getCheckInDate() { return checkInDate; }
+-    public void setCheckInDate(Date checkInDate) { this.checkInDate = checkInDate; }
+-
+-    public Date getCheckOutDate() { return checkOutDate; }
+-    public void setCheckOutDate(Date checkOutDate) { this.checkOutDate = checkOutDate; }
+-
++    // Getters and Setters
+     public String getResId() { return resId; }
++    public void setResId(String resId) { this.resId = resId; }
++
++    public String getGuestId() { return guestId; }
++    public void setGuestId(String guestId) { this.guestId = guestId; }
++
++    public String getGuestName() { return guestName; }
++    public void setGuestName(String guestName) { this.guestName = guestName; }
++
+     public String getRoomId() { return roomId; }
++    public void setRoomId(String roomId) { this.roomId = roomId; }
++
++    public String getCheckIn() { return checkIn; }
++    public void setCheckIn(String checkIn) { this.checkIn = checkIn; }
++
++    public String getCheckOut() { return checkOut; }
++    public void setCheckOut(String checkOut) { this.checkOut = checkOut; }
++
++    public double getTotalAmount() { return totalAmount; }
++    public void setTotalAmount(double totalAmount) { this.totalAmount = totalAmount; }
++
++    // toString() method එක Debugging සඳහා ඉතා වැදගත් වේ
++    @Override
++    public String toString() {
++        return "ReservationDTO{" +
++                "resId='" + resId + '\'' +
++                ", guestId='" + guestId + '\'' +
++                ", roomId='" + roomId + '\'' +
++                ", totalAmount=" + totalAmount +
++                '}';
++    }
+ }
+\ No newline at end of file
+Index: src/main/java/com/oceanview/ocean_view_resort/api/dto/RoomDTO.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.oceanview.ocean_view_resort.api.dto;\r\n\r\n/**\r\n * DTO for Room Management.\r\n * Includes pricePerNight for bill calculation requirements.\r\n */\r\npublic class RoomDTO {\r\n    private String roomId;\r\n    private String roomNumber;\r\n    private String type;\r\n    private double pricePerNight;\r\n    private String status; // AVAILABLE, OCCUPIED, MAINTENANCE\r\n\r\n    public RoomDTO() {}\r\n\r\n    public RoomDTO(String roomId, String roomNumber, String type, double pricePerNight, String status) {\r\n        this.roomId = roomId;\r\n        this.roomNumber = roomNumber;\r\n        this.type = type;\r\n        this.pricePerNight = pricePerNight;\r\n        this.status = status;\r\n    }\r\n\r\n    public String getRoomId() { return roomId; }\r\n    public void setRoomId(String roomId) { this.roomId = roomId; }\r\n\r\n    public double getPricePerNight() { return pricePerNight; }\r\n    public void setPricePerNight(double pricePerNight) { this.pricePerNight = pricePerNight; }\r\n\r\n    public String getStatus() { return status; }\r\n    public void setStatus(String status) { this.status = status; }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/oceanview/ocean_view_resort/api/dto/RoomDTO.java b/src/main/java/com/oceanview/ocean_view_resort/api/dto/RoomDTO.java
+--- a/src/main/java/com/oceanview/ocean_view_resort/api/dto/RoomDTO.java	(revision 3ecf93d40209ea5c6d29da545535315ca85b6731)
++++ b/src/main/java/com/oceanview/ocean_view_resort/api/dto/RoomDTO.java	(date 1772602755941)
+@@ -24,6 +24,9 @@
+     public String getRoomId() { return roomId; }
+     public void setRoomId(String roomId) { this.roomId = roomId; }
+ 
++    public String getType() { return type; }
++    public void setType(String type) { this.type = type; }
++
+     public double getPricePerNight() { return pricePerNight; }
+     public void setPricePerNight(double pricePerNight) { this.pricePerNight = pricePerNight; }
+ 
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>com.oceanview</groupId>\r\n    <artifactId>ocean_view_resort</artifactId>\r\n    <version>0.1.0-SNAPSHOT</version>\r\n    <name>ocean_view_resort</name>\r\n    <packaging>war</packaging>\r\n\r\n    <properties>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n        <maven.compiler.target>23</maven.compiler.target>\r\n        <maven.compiler.source>23</maven.compiler.source>\r\n        <junit.version>5.13.2</junit.version>\r\n    </properties>\r\n\r\n    <dependencies>\r\n\r\n        <dependency>\r\n            <groupId>com.mysql</groupId>\r\n            <artifactId>mysql-connector-j</artifactId>\r\n            <version>8.3.0</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>com.zaxxer</groupId>\r\n            <artifactId>HikariCP</artifactId>\r\n            <version>5.1.0</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>jakarta.enterprise</groupId>\r\n            <artifactId>jakarta.enterprise.cdi-api</artifactId>\r\n            <version>4.1.0</version>\r\n            <scope>provided</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>jakarta.json.bind</groupId>\r\n            <artifactId>jakarta.json.bind-api</artifactId>\r\n            <version>3.0.1</version>\r\n            <scope>provided</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>jakarta.ws.rs</groupId>\r\n            <artifactId>jakarta.ws.rs-api</artifactId>\r\n            <version>4.0.0</version>\r\n            <scope>provided</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>jakarta.servlet</groupId>\r\n            <artifactId>jakarta.servlet-api</artifactId>\r\n            <version>6.1.0</version>\r\n            <scope>provided</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.hibernate.orm</groupId>\r\n            <artifactId>hibernate-core</artifactId>\r\n            <version>7.0.4.Final</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.glassfish.jaxb</groupId>\r\n            <artifactId>jaxb-runtime</artifactId>\r\n            <version>4.0.5</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.hibernate.validator</groupId>\r\n            <artifactId>hibernate-validator</artifactId>\r\n            <version>9.0.1.Final</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-api</artifactId>\r\n            <version>${junit.version}</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-engine</artifactId>\r\n            <version>${junit.version}</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n    <build>\r\n        <plugins>\r\n            <plugin>\r\n                <groupId>org.apache.maven.plugins</groupId>\r\n                <artifactId>maven-war-plugin</artifactId>\r\n                <version>3.4.0</version>\r\n            </plugin>\r\n        </plugins>\r\n    </build>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision 3ecf93d40209ea5c6d29da545535315ca85b6731)
++++ b/pom.xml	(date 1772475400306)
+@@ -19,6 +19,9 @@
+ 
+     <dependencies>
+ 
++
++
++
+         <dependency>
+             <groupId>com.mysql</groupId>
+             <artifactId>mysql-connector-j</artifactId>

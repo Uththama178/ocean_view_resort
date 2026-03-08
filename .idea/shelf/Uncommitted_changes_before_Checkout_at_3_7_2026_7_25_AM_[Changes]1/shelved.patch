@@ -1,0 +1,120 @@
+Index: database.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>DROP TABLE IF EXISTS bill;\r\nDROP TABLE IF EXISTS reservation;\r\nDROP TABLE IF EXISTS room;\r\nDROP TABLE IF EXISTS guest;\r\nDROP TABLE IF EXISTS user;\r\n\r\nSELECT * FROM user;\r\nSELECT * FROM guest;\r\nSELECT * FROM room;\r\nSELECT * FROM reservation;\r\nSELECT * FROM bill;\r\n\r\n\r\nCREATE TABLE user (\r\n                      userId VARCHAR(10) NOT NULL,\r\n                      username VARCHAR(50) NOT NULL,\r\n                      password VARCHAR(50) NOT NULL,\r\n                      role ENUM('ADMIN', 'RECEPTIONIST', 'STAFF') NOT NULL,\r\n                      fullName VARCHAR(100),\r\n                      status VARCHAR(10) DEFAULT 'ACTIVE',\r\n                      CONSTRAINT pk_user PRIMARY KEY (userId),\r\n                      CONSTRAINT uk_username UNIQUE (username)\r\n);\r\nINSERT INTO user (userId, username, password, role, fullName, status) VALUES\r\n                                                                          ('U001', 'admin', 'admin123', 'ADMIN', 'System Administrator', 'ACTIVE'),\r\n                                                                          ('U002', 'mala', 'mala123', 'RECEPTIONIST', 'Mala Silva', 'ACTIVE'),\r\n                                                                          ('U003', 'kamal', 'kamal123', 'RECEPTIONIST', 'Kamal Perera', 'ACTIVE');\r\n\r\n\r\n\r\nCREATE TABLE guest (\r\n                       guestId VARCHAR(10) NOT NULL,\r\n                       name VARCHAR(100) NOT NULL,\r\n                       contact VARCHAR(15),\r\n                       email VARCHAR(100),\r\n                       nic VARCHAR(20),\r\n                       CONSTRAINT pk_guest PRIMARY KEY (guestId),\r\n                       CONSTRAINT uk_nic UNIQUE (nic)\r\n);\r\nINSERT INTO guest (guestId, name, contact, email, nic) VALUES\r\n                                                           ('G001', 'John Doe', '0771234567', 'john@example.com', '199012345678'),\r\n                                                           ('G002', 'Nimmi Fernando', '0719876543', 'nimmi@example.com', '956781234V'),\r\n                                                           ('G003', 'David Smith', '0751112223', 'david@example.com', '198599887766');\r\n\r\n\r\n\r\nCREATE TABLE room (\r\n                      roomId VARCHAR(10) NOT NULL,\r\n                      type VARCHAR(50) NOT NULL,\r\n                      price DOUBLE NOT NULL CHECK (price > 0), -- GFG Standard: Validation constraint\r\n                      status ENUM('AVAILABLE', 'OCCUPIED', 'MAINTENANCE') DEFAULT 'AVAILABLE',\r\n                      CONSTRAINT pk_room PRIMARY KEY (roomId)\r\n);\r\nINSERT INTO room (roomId, type, price, status) VALUES\r\n                                                   ('R001', 'Single Standard', 5000.00, 'AVAILABLE'),\r\n                                                   ('R002', 'Double Deluxe', 12000.00, 'AVAILABLE'),\r\n                                                   ('R003', 'Luxury Suite', 25000.00, 'OCCUPIED'),\r\n                                                   ('R004', 'Family Room', 18000.00, 'MAINTENANCE'),\r\n                                                   ('R005', 'Single Standard', 5500.00, 'AVAILABLE');\r\n\r\n\r\n\r\nCREATE TABLE reservation (\r\n                             resId VARCHAR(10) NOT NULL,\r\n                             guestId VARCHAR(10),\r\n                             roomId VARCHAR(10),\r\n                             checkIn DATE NOT NULL,\r\n                             checkOut DATE NOT NULL,\r\n                             status VARCHAR(20) DEFAULT 'CONFIRMED',\r\n                             CONSTRAINT pk_reservation PRIMARY KEY (resId),\r\n                             CONSTRAINT fk_res_guest FOREIGN KEY (guestId) REFERENCES guest(guestId) ON DELETE CASCADE,\r\n                             CONSTRAINT fk_res_room FOREIGN KEY (roomId) REFERENCES room(roomId) ON DELETE SET NULL\r\n);\r\nINSERT INTO reservation (resId, guestId, roomId, checkIn, checkOut, status) VALUES\r\n                                                                                ('RES001', 'G001', 'R001', '2026-02-16', '2026-02-18', 'CONFIRMED'),\r\n                                                                                ('RES002', 'G002', 'R002', '2026-02-20', '2026-02-25', 'PENDING');\r\n\r\n\r\n\r\nCREATE TABLE bill (\r\n                      billId VARCHAR(10) NOT NULL,\r\n                      resId VARCHAR(10),\r\n                      totalAmount DOUBLE NOT NULL,\r\n                      paymentDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\r\n                      CONSTRAINT pk_bill PRIMARY KEY (billId),\r\n                      CONSTRAINT fk_bill_res FOREIGN KEY (resId) REFERENCES reservation(resId) ON DELETE CASCADE\r\n);\r\nINSERT INTO bill (billId, resId, totalAmount) VALUES\r\n                                                  ('B001', 'RES001', 10000.00),\r\n                                                  ('B002', 'RES002', 60000.00);\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/database.sql b/database.sql
+--- a/database.sql	(revision 664d9d0d76b4a9a691244bb5cf4f0e4e4d0c1dcc)
++++ b/database.sql	(date 1772848076529)
+@@ -23,17 +23,19 @@
+ );
+ INSERT INTO user (userId, username, password, role, fullName, status) VALUES
+                                                                           ('U001', 'admin', 'admin123', 'ADMIN', 'System Administrator', 'ACTIVE'),
+-                                                                          ('U002', 'mala', 'mala123', 'RECEPTIONIST', 'Mala Silva', 'ACTIVE'),
++                                                                          ('U002', 'mala', 'mala123', 'STAFF', 'Mala Silva', 'ACTIVE'),
+                                                                           ('U003', 'kamal', 'kamal123', 'RECEPTIONIST', 'Kamal Perera', 'ACTIVE');
+ 
+ 
+ 
++
+ CREATE TABLE guest (
+                        guestId VARCHAR(10) NOT NULL,
+                        name VARCHAR(100) NOT NULL,
+                        contact VARCHAR(15),
+                        email VARCHAR(100),
+                        nic VARCHAR(20),
++                       address VARCHAR(255),
+                        CONSTRAINT pk_guest PRIMARY KEY (guestId),
+                        CONSTRAINT uk_nic UNIQUE (nic)
+ );
+@@ -60,22 +62,27 @@
+ 
+ 
+ 
+-CREATE TABLE reservation (
+-                             resId VARCHAR(10) NOT NULL,
+-                             guestId VARCHAR(10),
+-                             roomId VARCHAR(10),
+-                             checkIn DATE NOT NULL,
+-                             checkOut DATE NOT NULL,
+-                             status VARCHAR(20) DEFAULT 'CONFIRMED',
+-                             CONSTRAINT pk_reservation PRIMARY KEY (resId),
+-                             CONSTRAINT fk_res_guest FOREIGN KEY (guestId) REFERENCES guest(guestId) ON DELETE CASCADE,
+-                             CONSTRAINT fk_res_room FOREIGN KEY (roomId) REFERENCES room(roomId) ON DELETE SET NULL
++
++-- 1. මුලින්ම වගුව නිර්මාණය කරන්න (සෙමිකෝලනය අමතක කරන්න එපා)
++CREATE TABLE IF NOT EXISTS reservation (
++                                           resId VARCHAR(10) NOT NULL,
++                                           guestId VARCHAR(10),
++                                           roomId VARCHAR(10),
++                                           checkIn DATE NOT NULL,
++                                           checkOut DATE NOT NULL,
++                                           status VARCHAR(20) DEFAULT 'CONFIRMED',
++                                           CONSTRAINT pk_reservation PRIMARY KEY (resId),
++                                           CONSTRAINT fk_res_guest FOREIGN KEY (guestId) REFERENCES guest(guestId) ON DELETE CASCADE,
++                                           CONSTRAINT fk_res_room FOREIGN KEY (roomId) REFERENCES room(roomId) ON DELETE SET NULL
+ );
+-INSERT INTO reservation (resId, guestId, roomId, checkIn, checkOut, status) VALUES
+-                                                                                ('RES001', 'G001', 'R001', '2026-02-16', '2026-02-18', 'CONFIRMED'),
+-                                                                                ('RES002', 'G002', 'R002', '2026-02-20', '2026-02-25', 'PENDING');
+ 
+ 
++-- 3. දැන් දත්ත ඇතුළත් කරන්න (INSERT)
++-- සටහන: RES001 සහ RES002 දැනටමත් තිබේ නම් මුලින්ම එම වගුව Clear කර ගන්න (TRUNCATE TABLE reservation;)
++INSERT INTO reservation (resId, guestId, roomId, checkIn, checkOut, status, total_amount) VALUES
++                                                                                              ('RES004', 'G001', 'R001', '2026-02-16', '2026-02-18', 'CONFIRMED', 12500.0),
++                                                                                              ('RES005', 'G002', 'R002', '2026-02-20', '2026-02-25', 'PENDING', 28000.0),
++                                                                                              ('RES003', 'G001', 'R003', '2026-02-25', '2026-02-28', 'CONFIRMED', 45000.0);
+ 
+ CREATE TABLE bill (
+                       billId VARCHAR(10) NOT NULL,
+@@ -89,5 +96,7 @@
+                                                   ('B001', 'RES001', 10000.00),
+                                                   ('B002', 'RES002', 60000.00);
+ 
++-- 2. දැන් total_amount තීරුව එකතු කරන්න
++ALTER TABLE reservation ADD COLUMN total_amount DOUBLE DEFAULT 0.0;
+ 
+ 
+Index: src/main/webapp/index.jsp
+===================================================================
+diff --git a/src/main/webapp/index.jsp b/src/main/webapp/index.jsp
+deleted file mode 100644
+--- a/src/main/webapp/index.jsp	(revision 664d9d0d76b4a9a691244bb5cf4f0e4e4d0c1dcc)
++++ /dev/null	(revision 664d9d0d76b4a9a691244bb5cf4f0e4e4d0c1dcc)
+@@ -1,16 +0,0 @@
+-<%--
+-  Created by IntelliJ IDEA.
+-  User: USER
+-  Date: 2/16/2026
+-  Time: 1:42 AM
+-  To change this template use File | Settings | File Templates.
+---%>
+-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+-<html>
+-<head>
+-    <title>Title</title>
+-</head>
+-<body>
+-
+-</body>
+-</html>
+Index: src/main/java/com/oceanview/ocean_view_resort/HelloApplication.java
+===================================================================
+diff --git a/src/main/java/com/oceanview/ocean_view_resort/HelloApplication.java b/src/main/java/com/oceanview/ocean_view_resort/HelloApplication.java
+deleted file mode 100644
+--- a/src/main/java/com/oceanview/ocean_view_resort/HelloApplication.java	(revision 664d9d0d76b4a9a691244bb5cf4f0e4e4d0c1dcc)
++++ /dev/null	(revision 664d9d0d76b4a9a691244bb5cf4f0e4e4d0c1dcc)
+@@ -1,9 +0,0 @@
+-package com.oceanview.ocean_view_resort;
+-
+-import jakarta.ws.rs.ApplicationPath;
+-import jakarta.ws.rs.core.Application;
+-
+-@ApplicationPath("/api")
+-public class HelloApplication extends Application {
+-
+-}
+\ No newline at end of file
