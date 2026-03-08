@@ -8,11 +8,11 @@ import com.oceanview.ocean_view_resort.api.service.AuthService;
 
 /**
  * Service Implementation for Authentication logic.
- * Adheres to Java EE design patterns and SOLID principles. [cite: 2026-02-14]
+ * Adheres to Java EE design patterns and SOLID principles.
  */
 public class AuthServiceImpl implements AuthService {
 
-    // Dependency Injection: Connecting to the DAO Layer [cite: 2026-02-14]
+    // Dependency Injection: Connecting to the DAO Layer
     private final UserDAO userDAO = new UserDAOImpl();
 
     @Override

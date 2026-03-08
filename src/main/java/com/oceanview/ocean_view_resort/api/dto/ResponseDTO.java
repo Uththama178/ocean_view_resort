@@ -2,10 +2,6 @@ package com.oceanview.ocean_view_resort.api.dto;
 
 import java.io.Serializable;
 
-/**
- * Standardized Response DTO for communication with UI.
- * Uses Generics for Type-safety.
- */
 public class ResponseDTO<T> implements Serializable {
     private int statusCode;
     private String message;
@@ -18,6 +14,9 @@ public class ResponseDTO<T> implements Serializable {
         this.message = message;
         this.data = data;
     }
+
+    // solve getCode() error
+    public int getCode() { return statusCode; }
 
     public int getStatusCode() { return statusCode; }
     public void setStatusCode(int statusCode) { this.statusCode = statusCode; }

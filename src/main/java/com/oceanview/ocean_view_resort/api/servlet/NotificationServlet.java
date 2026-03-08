@@ -18,7 +18,7 @@ public class NotificationServlet extends HttpServlet {
         String role = request.getParameter("role");
         try {
             Set<NotificationDTO> alerts = notificationService.getUnreadAlertsByRole(role);
-            // සරලව alerts ගණන පෙන්වීමට [cite: 2026-02-14]
+            // Simply show the number of alerts
             response.getWriter().write("You have " + alerts.size() + " unread alerts.");
         } catch (Exception e) {
             response.sendError(500, e.getMessage());

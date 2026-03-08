@@ -14,15 +14,11 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * @author Batch_Top_Candidate
- * නිවැරදි කරන ලද Reservation Servlet.
- * පරාමිතීන් 7ක් පාලනය කිරීම සහ Logic සම්බන්ධ කිරීම මෙහි සිදු වේ.
- */
+
 @WebServlet(name = "ReservationServlet", urlPatterns = "/api/reservation")
 public class ReservationServlet extends HttpServlet {
 
-    // Service Layer එක සම්බන්ධ කිරීම
+    // Connecting the Service Layer
     private final ReservationService reservationService = new ReservationServiceImpl();
 
     @Override
@@ -33,7 +29,7 @@ public class ReservationServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         try {
-            // UI එකෙන් එන දත්ත ලබා ගැනීම
+            // Getting data from the UI
             String resId = request.getParameter("resId");
             String guestId = request.getParameter("guestId");
             String roomId = request.getParameter("roomId");
@@ -41,14 +37,14 @@ public class ReservationServlet extends HttpServlet {
             String checkOut = request.getParameter("checkOut");
             String totalAmountStr = request.getParameter("totalAmount");
 
-            // Validation: අත්‍යවශ්‍ය දත්ත තිබේදැයි බැලීම
+            // Validation: Checking whether the required data is present
             if (resId == null || guestId == null || totalAmountStr == null) {
                 response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 response.getWriter().write("{\"error\": \"Missing required fields!\"}");
                 return;
             }
 
-            // DTO එක සකස් කිරීම
+            // Preparing the DTO
             ReservationDTO reservationDTO = new ReservationDTO();
             reservationDTO.setResId(resId);
             reservationDTO.setGuestId(guestId);
@@ -57,10 +53,10 @@ public class ReservationServlet extends HttpServlet {
             reservationDTO.setCheckOut(checkOut);
             reservationDTO.setTotalAmount(Double.parseDouble(totalAmountStr));
 
-            // Service එක හරහා දත්ත ගබඩා කිරීම
+            // Storing data through the service
             ResponseDTO<Boolean> result = reservationService.confirmBooking(reservationDTO);
 
-            // ප්‍රතිඵලය JSON එකක් ලෙස යැවීම
+            // Send the result as JSON
             response.setStatus(result.getCode());
             response.getWriter().write("{\"message\": \"" + result.getMessage() + "\", \"status\": " + result.getData() + "}");
 
@@ -73,7 +69,7 @@ public class ReservationServlet extends HttpServlet {
         }
     }
 
-    // ReservationServlet.java තුළ
+    // ReservationServlet.java
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("application/json");
@@ -89,7 +85,7 @@ public class ReservationServlet extends HttpServlet {
                 json.append("\"roomId\":\"").append(r.getRoomId()).append("\",");
                 json.append("\"checkIn\":\"").append(r.getCheckIn()).append("\",");
                 json.append("\"status\":\"").append(r.getStatus()).append("\",");
-                json.append("\"amount\":").append(r.getTotalAmount()); // මෙතැන "amount" ලෙසම තිබිය යුතුයි
+                json.append("\"amount\":").append(r.getTotalAmount());
                 json.append("}");
                 if (i < all.size() - 1) json.append(",");
             }

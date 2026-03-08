@@ -5,10 +5,7 @@ import com.oceanview.ocean_view_resort.api.dto.ResponseDTO;
 import com.oceanview.ocean_view_resort.api.service.AuthService;
 import com.oceanview.ocean_view_resort.api.service.impl.AuthServiceImpl;
 
-/**
- * @author Batch_Top_Candidate
- * Pure Backend Controller - Cleaned from JavaFX dependencies.
- */
+
 public class AuthController {
     private final AuthService authService = new AuthServiceImpl();
 

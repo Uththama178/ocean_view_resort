@@ -2,7 +2,7 @@ package com.oceanview.ocean_view_resort.api.dto;
 
 /**
  * DTO for Guest Registration.
- * Captures personal details required by the Ocean View Resort scenario.
+
  */
 public class GuestDTO {
     private String guestId;
@@ -21,7 +21,7 @@ public class GuestDTO {
         this.email = email;
     }
 
-    // Encapsulation: Accessing private fields via public methods [cite: 2026-02-14]
+    // Encapsulation: Accessing private fields via public methods
     public String getGuestId() { return guestId; }
     public void setGuestId(String guestId) { this.guestId = guestId; }
 

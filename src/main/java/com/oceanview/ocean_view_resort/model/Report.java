@@ -13,5 +13,5 @@ public class Report {
         this.totalValue = totalValue;
         this.generatedDate = generatedDate;
     }
-    // Getters and Setters
+
 }

@@ -43,7 +43,7 @@ public class BillingServlet extends HttpServlet {
         String rateStr = request.getParameter("rate");
         String nightsStr = request.getParameter("nights");
 
-        // පරාමිතීන් හිස් දැයි පරීක්ෂා කිරීම
+        // Checking if parameters are empty
         if (rateStr == null || rateStr.isEmpty() || nightsStr == null || nightsStr.isEmpty()) {
             response.setStatus(400); // Bad Request
             response.getWriter().write("Error: Parameters Missing");

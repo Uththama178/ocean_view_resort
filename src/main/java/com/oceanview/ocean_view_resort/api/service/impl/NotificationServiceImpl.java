@@ -13,26 +13,26 @@ import java.util.Set;
 
 public class NotificationServiceImpl implements NotificationService {
 
-    // Dependency Injection: DAO Layer එක සම්බන්ධ කිරීම
+    // Dependency Injection: DAO Layer
     private final NotificationDAO notificationDAO = new NotificationDAOImpl();
 
     @Override
     public Set<NotificationDTO> getUnreadAlertsByRole(String role) throws Exception {
-        // Technical Requirement: අනුපිටපත් වැළැක්වීමට Set Interface භාවිතා කර ඇත [cite: 2026-02-14]
+        // Technical Requirement: Use det Interface
         Set<NotificationDTO> unreadSet = new HashSet<>();
 
-        // ඔබ ලබාදුන් DAO method එක භාවිතා කිරීම
+
         List<Notification> list = notificationDAO.getNotificationsByRole(role);
 
         for (Notification n : list) {
-            // පණිවිඩය කියවා නැතිනම් පමණක් (isRead == false) ලැයිස්තුවට එක් කරයි
+            // Adds the message to the list only if it is unread (isRead == false).
             if (!n.isRead()) {
-                // Constructor Fix: ඔබේ DTO එකේ ඇති parameters 4ක constructor එක භාවිතා කරන ලදී
+                // Constructor Fix: The 4-parameter constructor in your DTO was used.
                 unreadSet.add(new NotificationDTO(
                         n.getNotifId(),
                         n.getMessage(),
                         n.getReceiverRole(),
-                        n.getTimestamp().toString() // UI එක සඳහා String එකක් ලෙස ලබා දීම
+                        n.getTimestamp().toString() // Provide as a String for the UI
                 ));
             }
         }
@@ -41,13 +41,13 @@ public class NotificationServiceImpl implements NotificationService {
 
     @Override
     public boolean sendAlert(NotificationDTO d) throws Exception {
-        // DTO එක Model එකක් බවට පරිවර්තනය කිරීම (Mapping)
-        // String timestamp එක java.sql.Timestamp එකක් බවට පත් කිරීම
+        // Converting a DTO to a Model (Mapping)
+        // Converting a String timestamp to a java.sql.Timestamp
         Notification model = new Notification(
                 d.getNotifId(),
                 d.getMessage(),
                 d.getReceiverRole(),
-                new Timestamp(System.currentTimeMillis()), // වත්මන් වේලාව ලබා ගැනීම
+                new Timestamp(System.currentTimeMillis()), // Get the current time
                 false // අලුත් alert එකක් නිසා default false වේ
         );
         return notificationDAO.save(model);

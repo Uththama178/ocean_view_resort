@@ -29,7 +29,7 @@ public class AuthServlet extends HttpServlet {
                 session.setAttribute("currentUser", userDTO);
 
 
-                String role = userDTO.getRole(); // Backend එකේ "role" column එක සමඟ මෙය ගැලපේ
+                String role = userDTO.getRole(); //
 
                 if ("ADMIN".equals(role)) {
                     response.sendRedirect(request.getContextPath() + "/admin_dashboard.jsp");

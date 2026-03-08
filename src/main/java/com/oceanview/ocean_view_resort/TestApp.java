@@ -10,17 +10,17 @@ public class TestApp {
     public static void main(String[] args) {
         System.out.println("--- Ocean View Resort: Service Layer Testing ---");
 
-        // 1. Authentication Service පරීක්ෂා කිරීම
+        // 1. Checking the Authentication Service
         testAuth();
 
-        // 2. Billing Logic පරීක්ෂා කිරීම
+        // 2. Checking Billing Logic
         testBilling();
     }
 
     private static void testAuth() {
         AuthService authService = new AuthServiceImpl();
         try {
-            // ඔබේ DB එකේ ඇති username/password මෙහි ඇතුළත් කරන්න
+            // Enter the username/password from your DB here
             UserDTO user = authService.login("admin", "1234");
             if (user != null) {
                 System.out.println("[SUCCESS] Login Work: Welcome " + user.getFullName());
@@ -34,9 +34,9 @@ public class TestApp {
 
     private static void testBilling() {
         BillingService billingService = new BillingServiceImpl();
-        // රාත්‍රී 3ක් සහ කාමර ගාස්තුව 5000 ලෙස පරීක්ෂා කිරීම
+        // Checking in for 3 nights and room rate 5000
         ResponseDTO<Double> response = billingService.calculateFinalBill(5000.0, 3);
-        // response.isSuccess() වෙනුවට StatusCode එක 200 ද කියා බලන්න
+        // Check if the StatusCode is 200 instead of response.isSuccess()
         if (response.getStatusCode() == 200) {
             System.out.println("[SUCCESS] Billing Logic Work: Total is " + response.getData());
         } else {

@@ -11,11 +11,11 @@ public class ReservationController {
 
     public ResponseDTO<Boolean> makeReservation(ReservationDTO dto) {
         try {
-
-            return reservationService.confirmBooking(dto);
+             reservationService.confirmBooking(dto);
         } catch (Exception e) {
-
+            // Unhandled Exception
             return new ResponseDTO<>(500, "Error: " + e.getMessage(), false);
         }
     }
 }
+
