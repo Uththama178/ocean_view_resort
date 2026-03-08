@@ -37,7 +37,7 @@ public class BillingServlet extends HttpServlet {
         }
     }
 
-    // පැරණි doGet එක (Calculation සඳහා)
+    // old doGet
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String rateStr = request.getParameter("rate");
