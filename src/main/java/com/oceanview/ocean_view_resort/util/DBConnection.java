@@ -13,7 +13,6 @@ public class DBConnection {
 
     private static HikariDataSource dataSource;
 
-    // Static block - runs only once
     static {
         try {
             Properties properties = new Properties();
@@ -21,16 +20,28 @@ public class DBConnection {
                     .getClassLoader()
                     .getResourceAsStream("application.properties");
 
+            if (input == null) {
+                throw new RuntimeException("Error: application.properties file not found in resources!");
+            }
+
             properties.load(input);
 
             HikariConfig config = new HikariConfig();
+
+
+            config.setDriverClassName("com.mysql.cj.jdbc.Driver");
+
             config.setJdbcUrl(properties.getProperty("db.url"));
             config.setUsername(properties.getProperty("db.username"));
             config.setPassword(properties.getProperty("db.password"));
 
-            config.setMaximumPoolSize(10); // max 10 connections
+            config.setMaximumPoolSize(10);
             config.setMinimumIdle(2);
             config.setIdleTimeout(30000);
+
+
+            config.addDataSourceProperty("cachePrepStmts", "true");
+            config.addDataSourceProperty("prepStmtCacheSize", "250");
 
             dataSource = new HikariDataSource(config);
 
@@ -39,12 +50,12 @@ public class DBConnection {
         }
     }
 
-    private DBConnection() {
-        // prevent object creation
-    }
+    private DBConnection() { }
 
     public static Connection getConnection() throws SQLException {
+        if (dataSource == null) {
+            throw new SQLException("DataSource is not initialized properly!");
+        }
         return dataSource.getConnection();
     }
 }
-

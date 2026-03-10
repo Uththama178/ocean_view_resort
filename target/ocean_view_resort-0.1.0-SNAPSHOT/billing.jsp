@@ -14,7 +14,7 @@
         .nav-link.active { color: white; background: #0d6efd; border-radius: 5px; }
 
         /* Layout Alignment */
-        .main-content { margin-left: 16.666667%; padding: 20px; } /* Sidebar එකට ඉඩ තැබීම */
+        .main-content { margin-left: 16.666667%; padding: 20px; }
 
         .billing-card { border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: none; }
 
