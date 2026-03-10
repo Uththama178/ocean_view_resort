@@ -19,7 +19,7 @@
 <div class="login-card">
     <h2>Ocean View Login</h2>
 
-    <%-- Error එකක් ආවොත් පෙන්වීමට --%>
+
     <%
         String error = request.getParameter("error");
         if(error != null) {
@@ -44,7 +44,7 @@
 </div>
 
 <script>
-    // පිටුව Load වූ පසු ක්‍රියාත්මක වීමට
+
     document.addEventListener('DOMContentLoaded', function() {
         const urlParams = new URLSearchParams(window.location.search);
 
@@ -57,7 +57,7 @@
                 showConfirmButton: false
             });
 
-            // URL එක පිරිසිදු කිරීම
+
             window.history.replaceState({}, document.title, window.location.pathname);
         }
     });

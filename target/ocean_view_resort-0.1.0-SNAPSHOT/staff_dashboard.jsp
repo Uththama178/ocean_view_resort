@@ -7,7 +7,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.oceanview.ocean_view_resort.api.dto.UserDTO" %>
 <%
-    // Session එක පරීක්ෂා කිරීම - Login නොවී ඇතුළු වීම වැළැක්වීමට
+
     UserDTO user = (UserDTO) session.getAttribute("currentUser");
     if (user == null) {
         response.sendRedirect("index.jsp");

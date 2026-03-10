@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.oceanview.ocean_view_resort.api.dto.UserDTO" %>
 <%
-    // ආරක්ෂාව සඳහා Session පරීක්ෂාව
+
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     UserDTO user = (UserDTO) session.getAttribute("currentUser");
     if (user == null) {

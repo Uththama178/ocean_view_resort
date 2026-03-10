@@ -9,26 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     <list default="true" id="519d4ee9-bfd0-45ad-842d-b5daba34eeb1" name="Changes" comment="Set up Bill DTO,suitable for billing logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/servlet/BillingServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oceanview/ocean_view_resort/api/servlet/BillingServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/billing.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/billing.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
-=======
-    <list default="true" id="519d4ee9-bfd0-45ad-842d-b5daba34eeb1" name="Changes" comment="Set up Bill DTO,suitable for billing logic" />
->>>>>>> Stashed changes
-=======
-    <list default="true" id="519d4ee9-bfd0-45ad-842d-b5daba34eeb1" name="Changes" comment="Set up Bill DTO,suitable for billing logic" />
->>>>>>> Stashed changes
-=======
-    <list default="true" id="519d4ee9-bfd0-45ad-842d-b5daba34eeb1" name="Changes" comment="Set up Bill DTO,suitable for billing logic" />
->>>>>>> Stashed changes
-=======
-    <list default="true" id="519d4ee9-bfd0-45ad-842d-b5daba34eeb1" name="Changes" comment="Set up Bill DTO,suitable for billing logic" />
->>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,6 +135,19 @@
     ]
   }
 }</component>
+  <component name="RunDashboard">
+    <option name="configurationStatuses">
+      <map>
+        <entry key="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+          <value>
+            <map>
+              <entry key="Tomcat 10.1.52" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.52">
     <configuration name="DBTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.oceanview.ocean_view_resort.DBTest" />
@@ -402,20 +400,8 @@
       <workItem from="1772856523493" duration="2079000" />
       <workItem from="1772912741675" duration="873000" />
       <workItem from="1772954928850" duration="993000" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       <workItem from="1772957146056" duration="333000" />
       <workItem from="1772958452367" duration="634000" />
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="Initial database setup and documentation">
       <option name="closed" value="true" />

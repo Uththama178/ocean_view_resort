@@ -16,6 +16,51 @@
     </style>
 </head>
 <body>
+<div class="login-card">
+    <h2>Ocean View Login</h2>
 
+
+    <%
+        String error = request.getParameter("error");
+        if(error != null) {
+            if(error.equals("empty")) { %>
+    <div class="error-msg">All Fields are required!</div>
+    <% } else if(error.equals("invalid")) { %>
+    <div class="error-msg">Invalid Username or Password!</div>
+    <% }
+    }
+    %>
+
+    <form action="api/auth" method="POST">
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter your username" required>
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter your password" required>
+
+        <button type="submit">Login Now</button>
+    </form>
+    <p style="text-align: center; font-size: 14px;">New Staff? <a href="signup.jsp">Create Account</a></p>
+</div>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        if (urlParams.has('message') && urlParams.get('message') === 'logout_success') {
+            Swal.fire({
+                icon: 'success',
+                title: 'Logged Out!',
+                text: 'You have been successfully logged out of the system.',
+                timer: 3000,
+                showConfirmButton: false
+            });
+
+
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    });
+</script>
 </body>
 </html>
