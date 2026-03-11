@@ -6,3 +6,6 @@
 ## Setup Instructions
 1. Run the `database.sql` script in your MySQL server.
 2. Update `DBConnection.java` with your database credentials.
+
+### System Class Diagram
+![Class Diagram](./class%20diagram.drawio%20-%20Copy.svg)
